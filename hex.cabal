@@ -1,0 +1,38 @@
+name:                hex
+version:             0.1
+category:            Codec
+synopsis:            A library for creating hexadecimal representations
+license:             BSD3
+license-file:        LICENSE
+author:              Ian Taylor
+maintainer:          Ian Taylor <ibtaylor@gmail.com>
+stability:           Experimental
+extra-source-files:  README
+
+-- -- -- -- -- -- -- -- -- --
+
+cabal-version:       >= 1.6
+build-type:          Custom
+
+-- -- -- -- -- -- -- -- -- --
+
+library
+  exposed-modules: Codec.Hex
+  
+  build-depends:       
+    base == 4.*,
+    vector == 0.*,
+    bytestring == 0.9.*
+
+  ghc-options: -Wall -O2
+  if impl(ghc >= 6.8)
+    ghc-options: -fwarn-tabs
+
+  hs-source-dirs:
+    src
+
+-- -- -- -- -- -- -- -- -- --
+
+source-repository head
+  type:     git
+  location: git://github.com/ibtaylor/hex.git
